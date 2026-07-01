@@ -38,6 +38,8 @@
             text-align: center;
             z-index: 10;
             animation: slideIn 1s ease;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         @keyframes slideIn {
@@ -96,6 +98,7 @@
             height: auto;
             max-height: 400px;
             border-radius: 10px;
+            object-fit: contain;
         }
 
         .slide-placeholder {
@@ -289,26 +292,23 @@
         <!-- Photo Slideshow -->
         <div class="slideshow-container">
             <div class="slide active">
-                <div class="slide-placeholder">
-                    📸 Photo Slideshow<br>
-                    <small style="font-size: 0.8em; margin-top: 10px;">Add your photos here!</small>
-                </div>
-                <div class="slide-text">Together forever</div>
+                <img src="photos/photo1.jpg" alt="Mom Portrait">
+                <div class="slide-text">Beautiful Mom 💚</div>
             </div>
             
             <div class="slide">
-                <div class="slide-placeholder">Your Memory 2</div>
-                <div class="slide-text">Building beautiful moments</div>
+                <img src="photos/photo2.jpg" alt="Dad at Mandir">
+                <div class="slide-text">Dad's Special Moments 🕉️</div>
             </div>
             
             <div class="slide">
-                <div class="slide-placeholder">Your Memory 3</div>
-                <div class="slide-text">A lifetime of love</div>
+                <img src="photos/photo3.jpg" alt="Mom Traditional">
+                <div class="slide-text">Timeless Beauty 💙</div>
             </div>
 
             <div class="slide">
-                <div class="slide-placeholder">Your Memory 4</div>
-                <div class="slide-text">And counting...</div>
+                <img src="photos/photo4.jpg" alt="Family Together">
+                <div class="slide-text">Our Beautiful Family 👨‍👩‍👧‍👦</div>
             </div>
         </div>
 
@@ -328,7 +328,7 @@
 
         <!-- Music Player -->
         <div class="music-player">
-            <p>🎵 Soft Background Music (Optional)</p>
+            <p>🎵 Soft Background Music</p>
             <audio controls>
                 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
