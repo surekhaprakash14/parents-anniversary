@@ -249,6 +249,12 @@
             background-color: #e63946;
         }
 
+        .slide-counter {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 30px 20px;
@@ -276,23 +282,38 @@
         <!-- Photo Slideshow -->
         <div class="slideshow-container">
             <div class="slide active">
-                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo5.jpg" alt="Mom Portrait">
-                <div class="slide-text">Beautiful Mom 💙</div>
+                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo2.jpg" alt="Anniversary Memory 1">
+                <div class="slide-text">Beautiful Moments Together 💑</div>
             </div>
             
             <div class="slide">
-                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo6.jpg" alt="Dad at Mandir">
-                <div class="slide-text">Dad's Special Moments 🙏</div>
+                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo3.jpg" alt="Anniversary Memory 2">
+                <div class="slide-text">Family Love 👨‍👩‍👧‍👦</div>
             </div>
             
             <div class="slide">
-                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo2.jpg" alt="Mom Traditional">
-                <div class="slide-text">Timeless Beauty 💕</div>
+                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo4.jpg" alt="Anniversary Memory 3">
+                <div class="slide-text">Precious Times 💕</div>
             </div>
 
             <div class="slide">
-                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo3.jpg" alt="Family Together">
-                <div class="slide-text">Our Beautiful Family 👨‍👩‍👧‍👦</div>
+                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo5.jpg" alt="Anniversary Memory 4">
+                <div class="slide-text">Mom's Beauty ✨</div>
+            </div>
+
+            <div class="slide">
+                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo6.jpg" alt="Anniversary Memory 5">
+                <div class="slide-text">Dad's Moments 🙏</div>
+            </div>
+
+            <div class="slide">
+                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/photo7.jpg" alt="Anniversary Memory 6">
+                <div class="slide-text">Celebrations 🎉</div>
+            </div>
+
+            <div class="slide">
+                <img src="https://raw.githubusercontent.com/surekhaprakash14/parents-anniversary/main/cover.jpg" alt="Anniversary Memory 7">
+                <div class="slide-text">Love Forever ❤️</div>
             </div>
         </div>
 
@@ -308,6 +329,13 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
             <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+        </div>
+
+        <div class="slide-counter">
+            <span id="slideNumber">1</span> / 7
         </div>
 
         <!-- Music Player -->
@@ -363,6 +391,7 @@
 
             slides[currentSlideIndex - 1].classList.add('active');
             dots[currentSlideIndex - 1].classList.add('active');
+            document.getElementById('slideNumber').textContent = currentSlideIndex;
         }
 
         // Create floating hearts
