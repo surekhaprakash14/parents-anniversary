@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary, Mom & Dad! ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            animation: bgShift 15s ease infinite;
+        }
+
+        @keyframes bgShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+            50% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 10;
+            animation: slideIn 1s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #e63946;
+            margin-bottom: 20px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            letter-spacing: 2px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 40px auto;
+            background: #f1f1f1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            animation: fadeIn 1s;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            border-radius: 10px;
+        }
+
+        .slide-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            border-radius: 10px;
+        }
+
+        .slide-text {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #d62828;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
+
+        .message {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin: 40px 0;
+            font-style: italic;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%);
+            border-radius: 15px;
+            border-left: 5px solid #e63946;
+        }
+
+        .signature {
+            font-size: 1.3em;
+            color: #e63946;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            animation: float 3s ease-in forwards;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 1;
+                transform: translateY(0) translateX(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) translateX(100px) scale(0);
+            }
+        }
+
+        .rose-petal {
+            position: fixed;
+            pointer-events: none;
+            animation: petals 4s ease-in forwards;
+        }
+
+        @keyframes petals {
+            0% {
+                opacity: 1;
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(-150px) rotate(360deg);
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            animation: sparkle 1s ease-in forwards;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        .happy-anniversary {
+            font-size: 2.5em;
+            color: #e63946;
+            margin: 30px 0;
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .music-player {
+            margin: 30px 0;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .index-dots {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #e63946;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .message {
+                font-size: 1em;
+                padding: 20px;
+            }
+
+            .slide-placeholder {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💕 Happy Anniversary 💕</h1>
+        
+        <div class="happy-anniversary">
+            🌹 Mom & Dad 🌹
+        </div>
+
+        <!-- Photo Slideshow -->
+        <div class="slideshow-container">
+            <div class="slide active">
+                <div class="slide-placeholder">
+                    📸 Photo Slideshow<br>
+                    <small style="font-size: 0.8em; margin-top: 10px;">Add your photos here!</small>
+                </div>
+                <div class="slide-text">Together forever</div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-placeholder">Your Memory 2</div>
+                <div class="slide-text">Building beautiful moments</div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-placeholder">Your Memory 3</div>
+                <div class="slide-text">A lifetime of love</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-placeholder">Your Memory 4</div>
+                <div class="slide-text">And counting...</div>
+            </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="controls">
+            <button onclick="changeSlide(-1)">❮ Previous</button>
+            <button onclick="changeSlide(1)">Next ❯</button>
+        </div>
+
+        <!-- Dots for slide indicator -->
+        <div class="index-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-player">
+            <p>🎵 Soft Background Music (Optional)</p>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Heartfelt Message -->
+        <div class="message">
+            <p>Happy Anniversary, Mom & Dad!</p>
+            <br>
+            <p>Thank you for teaching me what love, patience, and family truly mean. Every smile we share today is because of the beautiful life you've built together. May your journey continue with happiness, laughter, good health, and endless love.</p>
+            <div class="signature">
+                With all my love,<br>
+                Surekha ❤️
+            </div>
+        </div>
+
+        <!-- Sparkle effect button -->
+        <button onclick="celebrateNow()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); font-size: 1.2em; padding: 15px 40px;">
+            ✨ Celebrate Now! ✨
+        </button>
+    </div>
+
+    <script>
+        let currentSlideIndex = 1;
+
+        function changeSlide(n) {
+            showSlide(currentSlideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            const dots = document.getElementsByClassName('dot');
+
+            if (n > slides.length) { currentSlideIndex = 1; }
+            if (n < 1) { currentSlideIndex = slides.length; }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+
+            slides[currentSlideIndex - 1].classList.add('active');
+            dots[currentSlideIndex - 1].classList.add('active');
+        }
+
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = window.innerHeight + 'px';
+            heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 3000);
+        }
+
+        // Create falling rose petals
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'rose-petal';
+            petal.innerHTML = '🌹';
+            petal.style.left = Math.random() * window.innerWidth + 'px';
+            petal.style.top = '-50px';
+            petal.style.fontSize = Math.random() * 20 + 20 + 'px';
+            document.body.appendChild(petal);
+            
+            setTimeout(() => petal.remove(), 4000);
+        }
+
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.fontSize = Math.random() * 20 + 15 + 'px';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 1000);
+        }
+
+        // Celebration function
+        function celebrateNow() {
+            // Create multiple hearts, petals, and sparkles
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => createHeart(), i * 100);
+                setTimeout(() => createPetal(), i * 120);
+                setTimeout(() => createSparkle(), i * 80);
+            }
+            
+            // Add some visual feedback
+            const container = document.querySelector('.container');
+            container.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                container.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        // Auto-float hearts and petals on page load
+        window.addEventListener('load', () => {
+            setInterval(createHeart, 2000);
+            setInterval(createPetal, 2500);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+    </script>
+</body>
+</html>
